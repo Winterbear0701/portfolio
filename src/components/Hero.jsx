@@ -1,0 +1,181 @@
+import { motion } from 'framer-motion'
+import { ChevronDownIcon, DocumentArrowDownIcon } from '@heroicons/react/24/outline'
+import { Github, Linkedin, Mail } from 'lucide-react'
+import ThreeDBackground from './ThreeDBackground'
+import AnimatedBackground from './AnimatedBackground'
+
+const Hero = () => {
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <section id="hero" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 dark:from-gray-900 dark:via-black dark:to-gray-800 overflow-hidden">
+      {/* 3D Background */}
+      <ThreeDBackground 
+        showParticles={true} 
+        showShapes={false} 
+        className="opacity-30 dark:opacity-20" 
+      />
+      
+      {/* Animated Background Pattern */}
+      <AnimatedBackground 
+        pattern="dots" 
+        intensity="medium" 
+        color="orange" 
+      />
+      
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-grid-pattern"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto"
+        >
+          {/* Profile Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8"
+          >
+            <motion.div
+              animate={{ 
+                scale: [1, 1.05, 1]
+              }}
+              transition={{
+                scale: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-orange-500 to-red-600 p-1 animate-pulse-glow"
+            >
+              <div className="w-full h-full rounded-full bg-gray-900 dark:bg-gray-800 flex items-center justify-center">
+                <span className="text-4xl font-bold text-orange-400 dark:text-orange-300">SJ</span>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Name and Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-5xl md:text-7xl font-bold text-white dark:text-white mb-4"
+          >
+            Sajith J
+          </motion.h1>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl md:text-2xl text-orange-400 dark:text-orange-300 mb-8 font-light"
+          >
+            B.Tech in Artificial Intelligence & Data Science Student
+          </motion.p>
+
+          {/* Brief Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-lg text-gray-300 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
+          >
+            Passionate about AI, Machine Learning, and Data Science. Building innovative solutions that make a difference.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="flex flex-wrap justify-center gap-4 mb-12"
+          >
+            <button className="group bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2">
+              <DocumentArrowDownIcon className="w-5 h-5" />
+              Download Resume
+            </button>
+            
+            <button 
+              onClick={() => scrollToSection('projects')}
+              className="group border-2 border-orange-600 text-orange-400 dark:text-orange-400 dark:border-orange-400 hover:bg-orange-600 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            >
+              View Projects
+            </button>
+          </motion.div>
+
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex justify-center gap-6 mb-16"
+          >
+            <a 
+              href="https://github.com/sajith-070106" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group p-3 bg-gray-800 dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            >
+              <Github className="w-6 h-6 text-gray-300 dark:text-gray-300 group-hover:text-orange-400" />
+            </a>
+            
+            <a 
+              href="https://www.linkedin.com/in/sajith-070106-j" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group p-3 bg-gray-800 dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            >
+              <Linkedin className="w-6 h-6 text-gray-300 dark:text-gray-300 group-hover:text-orange-400" />
+            </a>
+            
+            <a 
+              href="mailto:sajithjaganathan7@gmail.com"
+              className="group p-3 bg-gray-800 dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+            >
+              <Mail className="w-6 h-6 text-gray-300 dark:text-gray-300 group-hover:text-orange-400" />
+            </a>
+          </motion.div>
+
+          {/* Scroll Indicator */}
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            onClick={() => scrollToSection('about')}
+            className="animate-bounce mb-16"
+          >
+            <ChevronDownIcon className="w-8 h-8 text-gray-400 mx-auto" />
+          </motion.button>
+
+          {/* Stats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+          >
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">4+</div>
+              <div className="text-sm text-gray-400">Projects</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">20+</div>
+              <div className="text-sm text-gray-400">Skills Mastered</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">1+</div>
+              <div className="text-sm text-gray-400">Publications</div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+export default Hero
