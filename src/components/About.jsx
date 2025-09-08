@@ -39,7 +39,7 @@ const About = () => {
               initial={{ width: 0 }}
               animate={inView ? { width: '4rem' } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto rounded-full"
+              className="h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto rounded-full"
             />
           </div>
 
@@ -68,7 +68,7 @@ const About = () => {
                   transition={{ duration: 0.8, delay: 0.5 }}
                   className="text-center"
                 >
-                  <div className="text-3xl font-bold text-orange-500 dark:text-orange-400 mb-2">8.6</div>
+                  <div className="text-3xl font-bold text-orange-400 dark:text-orange-300 mb-2">8.6</div>
                   <div className="text-sm text-gray-400 dark:text-gray-400">CGPA</div>
                 </motion.div>
                 <motion.div
@@ -77,7 +77,7 @@ const About = () => {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-center"
                 >
-                  <div className="text-3xl font-bold text-orange-500 dark:text-orange-400 mb-2">3+</div>
+                  <div className="text-3xl font-bold text-orange-400 dark:text-orange-300 mb-2">3+</div>
                   <div className="text-sm text-gray-400 dark:text-gray-400">Projects</div>
                 </motion.div>
                 <motion.div
@@ -86,7 +86,7 @@ const About = () => {
                   transition={{ duration: 0.8, delay: 0.7 }}
                   className="text-center"
                 >
-                  <div className="text-3xl font-bold text-orange-500 dark:text-orange-400 mb-2">7+</div>
+                  <div className="text-3xl font-bold text-orange-400 dark:text-orange-300 mb-2">7+</div>
                   <div className="text-sm text-gray-400 dark:text-gray-400">Certifications</div>
                 </motion.div>
               </div>
@@ -99,7 +99,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-orange-600 to-red-600 rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl p-8 text-white">
                 <h4 className="text-xl font-semibold mb-4">Current Focus</h4>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">

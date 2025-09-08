@@ -9,7 +9,7 @@ import Publications from './components/Publications'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MouseTrail from './components/MouseTrail'
-import FloatingElements from './components/FloatingElements'
+// import FloatingElements from './components/FloatingElements' // Removed
 
 function App() {
   const [darkMode, setDarkMode] = useState(true) // Start with dark mode like the image
@@ -42,8 +42,8 @@ function App() {
       {/* Mouse Trail Effect */}
       <MouseTrail enabled={true} particleCount={12} />
       
-      {/* Floating Background Elements */}
-      <FloatingElements density="medium" theme="tech" />
+      {/* Floating Background Elements - Removed */}
+      {/* <FloatingElements density="medium" theme="tech" /> */}
       
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <main>

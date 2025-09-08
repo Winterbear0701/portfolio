@@ -24,7 +24,7 @@ const Projects = () => {
       description: "Developed an advanced computer vision system using YOLOv8 for real-time fire and smoke detection. Implemented early warning capabilities for enhanced safety monitoring with high accuracy object detection and alert mechanisms.",
       techStack: ["Python", "YOLOv8", "OpenCV", "PyTorch", "Computer Vision", "AI/ML"],
       icon: <FireIcon className="w-8 h-8" />,
-      gradient: "from-red-600 to-orange-500",
+      gradient: "from-red-500 to-orange-400",
       features: [
         "Real-time Fire Detection",
         "Smoke Pattern Recognition",
@@ -42,7 +42,7 @@ const Projects = () => {
       description: "Developed an AI-powered Smart Library with intelligent search, personalized recommendations, and spam review detection. Integrated face detection, offline voice search, and user analytics for enhanced user experience.",
       techStack: ["Python", "Streamlit", "AI/ML", "Face Detection", "NLP"],
       icon: <BookOpenIcon className="w-8 h-8" />,
-      gradient: "from-orange-500 to-red-500",
+      gradient: "from-orange-400 to-red-400",
       features: [
         "Intelligent Search System",
         "Personalized Recommendations",
@@ -60,7 +60,7 @@ const Projects = () => {
       description: "Built a website-based game for a college event, showcasing full-stack implementation with programming and Morse-code puzzle integration. Created an engaging interactive experience combining web development with game design.",
       techStack: ["Django", "Python", "JavaScript", "HTML", "Tailwind CSS", "Unity"],
       icon: <CpuChipIcon className="w-8 h-8" />,
-      gradient: "from-red-500 to-orange-500",
+      gradient: "from-red-400 to-orange-400",
       features: [
         "Interactive Game Interface",
         "Morse Code Puzzles",
@@ -78,7 +78,7 @@ const Projects = () => {
       description: "Created a comprehensive system to detect and flag misinformation using advanced NLP and machine learning techniques. Ensures information integrity through sophisticated content analysis and verification mechanisms.",
       techStack: ["Python", "Django", "HTML", "CSS", "JavaScript", "RAG", "NLP"],
       icon: <ShieldCheckIcon className="w-8 h-8" />,
-      gradient: "from-yellow-500 to-orange-500",
+      gradient: "from-yellow-400 to-orange-400",
       features: [
         "Advanced NLP Processing",
         "ML-based Detection",
@@ -153,7 +153,7 @@ const Projects = () => {
               initial={{ width: 0 }}
               animate={inView ? { width: '4rem' } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="h-1 bg-gradient-to-r from-orange-500 to-red-600 mx-auto rounded-full"
+              className="h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto rounded-full"
             />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -229,7 +229,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex items-center gap-2 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300"
+                          className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300"
                         >
                           <EyeIcon className="w-5 h-5" />
                           View Demo
@@ -242,7 +242,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="flex items-center gap-2 border-2 border-orange-500 text-orange-600 dark:text-orange-400 hover:bg-orange-500 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300"
+                          className="flex items-center gap-2 border-2 border-orange-400 text-orange-500 dark:text-orange-300 hover:bg-orange-400 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300"
                         >
                           <CodeBracketIcon className="w-5 h-5" />
                           Source Code
