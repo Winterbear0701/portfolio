@@ -77,7 +77,7 @@ const About = () => {
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="text-center"
                 >
-                  <div className="text-3xl font-bold text-orange-400 dark:text-orange-300 mb-2">3+</div>
+                  <div className="text-3xl font-bold text-orange-400 dark:text-orange-300 mb-2">5+</div>
                   <div className="text-sm text-gray-400 dark:text-gray-400">Projects</div>
                 </motion.div>
                 <motion.div
@@ -104,19 +104,15 @@ const About = () => {
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>AI & Machine Learning</span>
+                    <span>Data Science</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>Data Science & Analytics</span>
+                    <span>Machine Learning</span>
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>Full-Stack Development</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>Research & Innovation</span>
+                    <span>GenAI</span>
                   </li>
                 </ul>
               </div>

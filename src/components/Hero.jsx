@@ -116,7 +116,7 @@ const Hero = () => {
             className="flex justify-center gap-6 mb-16"
           >
             <a 
-              href="https://github.com/sajith-070106" 
+              href="https://github.com/Winterbear0701" 
               target="_blank" 
               rel="noopener noreferrer"
               className="group p-3 bg-gray-800 dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
@@ -152,26 +152,7 @@ const Hero = () => {
             <ChevronDownIcon className="w-8 h-8 text-gray-400 mx-auto" />
           </motion.button>
 
-          {/* Stats Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="grid grid-cols-3 gap-8 max-w-2xl mx-auto"
-          >
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-300 mb-2">4+</div>
-              <div className="text-sm text-gray-400">Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-300 mb-2">20+</div>
-              <div className="text-sm text-gray-400">Skills Mastered</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-orange-300 mb-2">1+</div>
-              <div className="text-sm text-gray-400">Publications</div>
-            </div>
-          </motion.div>
+          {/* Stats Section - Removed as requested */}
         </motion.div>
       </div>
     </section>

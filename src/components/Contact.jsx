@@ -166,10 +166,9 @@ const Contact = () => {
                 </p>
                 <ul className="space-y-2">
                   {[
-                    "Machine Learning & AI Development",
-                    "Data Science & Analytics",
-                    "Full-Stack Development",
-                    "Research & Innovation Projects"
+                    "GenAI",
+                    "Data Science",
+                    "Machine Learning"
                   ].map((opportunity) => (
                     <li key={opportunity} className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                       <div className="w-2 h-2 bg-blue-500 rounded-full"></div>

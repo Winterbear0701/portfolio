@@ -55,9 +55,9 @@ const Education = ({ darkMode }) => {
       location: "Coimbatore, India",
       description: "Comprehensive program covering AI fundamentals, machine learning algorithms, data structures, and advanced analytics with hands-on project experience.",
       highlights: [
-        "Top 10% of the class",
+        "Interactive participation in class",
         "Active in technical events",
-        "Research in misinformation detection"
+        "Research in ML and GenAI"
       ]
     },
     {
@@ -157,8 +157,13 @@ const Education = ({ darkMode }) => {
 
   const activities = [
     {
-      title: "Rotract - Big Bang 2025",
-      description: "Participated in community service and leadership development program",
+      title: "International & Professional Service Chair",
+      description: "Leading International and Professional Service for Rotaract Club of Sri Shakthi Institute Of Engineering and Technology, GROUP 4, RI District 3206 (July 2025 - June 2026)",
+      icon: <UsersIcon className="w-6 h-6" />
+    },
+    {
+      title: "Rotaractor Member",
+      description: "Active member of Rotaract Club of Sri Shakthi Institute Of Engineering and Technology (July 2024 - June 2025), participating in community service and leadership development programs",
       icon: <UsersIcon className="w-6 h-6" />
     },
     {

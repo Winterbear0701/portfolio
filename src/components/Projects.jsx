@@ -245,7 +245,7 @@ const Projects = () => {
                           className="flex items-center gap-2 border-2 border-orange-400 text-orange-500 dark:text-orange-300 hover:bg-orange-400 hover:text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300"
                         >
                           <CodeBracketIcon className="w-5 h-5" />
-                          Source Code
+                          Git Link
                         </motion.a>
                       )}
                       {project.status && (

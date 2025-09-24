@@ -154,14 +154,8 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+          className="flex justify-center items-center"
         >
-          <div className="text-gray-400 text-sm flex items-center gap-2">
-            <span>© {currentYear} Sajith J. Made with</span>
-            <Heart className="w-4 h-4 text-red-500" />
-            <span>and lots of coffee ☕</span>
-          </div>
-          
           <button
             onClick={scrollToTop}
             className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"

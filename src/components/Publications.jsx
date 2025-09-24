@@ -51,24 +51,14 @@ const Publications = () => {
 
   const researchInterests = [
     {
-      title: "Artificial Intelligence",
-      description: "Exploring advanced AI algorithms and their real-world applications",
-      icon: "🤖"
-    },
-    {
-      title: "Natural Language Processing",
-      description: "Developing systems that understand and process human language",
-      icon: "💬"
-    },
-    {
-      title: "Information Integrity",
-      description: "Creating solutions to combat misinformation and ensure data accuracy",
-      icon: "🛡️"
-    },
-    {
       title: "Machine Learning",
       description: "Implementing ML models for various domain-specific challenges",
-      icon: "🧠"
+      icon: "�"
+    },
+    {
+      title: "GenAI",
+      description: "Exploring generative AI technologies and their innovative applications",
+      icon: "�"
     }
   ]
 
@@ -198,7 +188,7 @@ const Publications = () => {
               Research Interests
             </h3>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
               {researchInterests.map((interest, index) => (
                 <motion.div
                   key={interest.title}

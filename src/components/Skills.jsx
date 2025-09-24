@@ -27,25 +27,20 @@ const Skills = () => {
     {
       title: "Frameworks & Libraries",
       icon: <WrenchScrewdriverIcon className="w-8 h-8" />,
-      skills: ["Django", "Streamlit", "Unity", "Tailwind CSS"],
+      skills: ["Django", "Streamlit", "Flask", "Tailwind CSS", "Pandas", "NumPy", "Matplotlib", "Scikit-learn"],
       color: "from-red-500 to-orange-600"
     },
     {
       title: "Data Science & AI",
       icon: <ChartBarIcon className="w-8 h-8" />,
-      skills: ["Machine Learning", "Data Analysis", "Prompt Engineering", "RAG"],
+      skills: ["Machine Learning", "Data Analysis", "Prompt Engineering", "RAG", "LLM"],
       color: "from-yellow-500 to-orange-600"
     },
-    {
-      title: "Big Data",
-      icon: <CpuChipIcon className="w-8 h-8" />,
-      skills: ["Hadoop", "HDFS", "MapReduce"],
-      color: "from-orange-600 to-red-500"
-    },
+
     {
       title: "Tools & Technologies",
       icon: <CommandLineIcon className="w-8 h-8" />,
-      skills: ["SQL", "Git", "Linux"],
+      skills: ["SQL", "Git", "Linux", "PowerBI"],
       color: "from-red-600 to-orange-500"
     },
     {
