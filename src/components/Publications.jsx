@@ -52,13 +52,13 @@ const Publications = () => {
   const researchInterests = [
     {
       title: "Machine Learning",
-      description: "Implementing ML models for various domain-specific challenges",
-      icon: "�"
+      description: "Implementing advanced ML models for various domain-specific challenges, focusing on supervised and unsupervised learning techniques",
+      icon: "🧠"
     },
     {
       title: "GenAI",
-      description: "Exploring generative AI technologies and their innovative applications",
-      icon: "�"
+      description: "Exploring generative AI technologies, transformers, and their innovative applications in solving real-world problems",
+      icon: "🤖"
     }
   ]
 
@@ -188,7 +188,7 @@ const Publications = () => {
               Research Interests
             </h3>
             
-            <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {researchInterests.map((interest, index) => (
                 <motion.div
                   key={interest.title}

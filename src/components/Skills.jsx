@@ -27,26 +27,26 @@ const Skills = () => {
     {
       title: "Frameworks & Libraries",
       icon: <WrenchScrewdriverIcon className="w-8 h-8" />,
-      skills: ["Django", "Streamlit", "Flask", "Tailwind CSS", "Pandas", "NumPy", "Matplotlib", "Scikit-learn"],
+      skills: ["Django", "Streamlit", "Flask", "Tailwind CSS", "Pandas", "NumPy", "Matplotlib", "Scikit-learn", "TensorFlow/PyTorch", "Hugging Face Transformers"],
       color: "from-red-500 to-orange-600"
     },
     {
       title: "Data Science & AI",
       icon: <ChartBarIcon className="w-8 h-8" />,
-      skills: ["Machine Learning", "Data Analysis", "Prompt Engineering", "RAG", "LLM"],
+      skills: ["Machine Learning (Supervised/Unsupervised)", "Deep Learning (CNNs/RNNs/LSTMs)", "Natural Language Processing", "Text Preprocessing & Embeddings", "Transformers (BERT/GPT)", "RAG Systems", "LLMs & Agents", "Data Analysis & Visualization", "Prompt Engineering"],
       color: "from-yellow-500 to-orange-600"
     },
 
     {
       title: "Tools & Technologies",
       icon: <CommandLineIcon className="w-8 h-8" />,
-      skills: ["SQL", "Git", "Linux", "PowerBI"],
+      skills: ["SQL", "Git", "Linux", "PowerBI", "Docker", "ONNX/TensorRT"],
       color: "from-red-600 to-orange-500"
     },
     {
       title: "Soft Skills",
       icon: <UsersIcon className="w-8 h-8" />,
-      skills: ["Problem Solving", "Leadership", "Team Collaboration"],
+      skills: ["Problem Solving", "Leadership", "Team Collaboration", "Research & Experimentation"],
       color: "from-orange-500 to-yellow-500"
     }
   ]
