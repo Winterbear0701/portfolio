@@ -95,10 +95,14 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-wrap justify-center gap-4 mb-12"
           >
-            <button className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2">
+            <a 
+              href="/resume.pdf" 
+              download="Sajith_Resume.pdf"
+              className="group bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center gap-2"
+            >
               <DocumentArrowDownIcon className="w-5 h-5" />
               Download Resume
-            </button>
+            </a>
             
             <button 
               onClick={() => scrollToSection('projects')}

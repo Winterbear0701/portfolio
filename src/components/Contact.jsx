@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import emailjs from '@emailjs/browser'
 import { 
   EnvelopeIcon, 
   MapPinIcon, 
@@ -22,6 +23,8 @@ const Contact = () => {
     message: ''
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSending, setIsSending] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     setFormData({
@@ -30,23 +33,51 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    
-    // Construct mailto link with form data
-    const mailtoLink = `mailto:sajithjaganathan7@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`
-    
-    // Open user's email client
-    window.location.href = mailtoLink
-    
-    // Show success message
-    setIsSubmitted(true)
-    setTimeout(() => {
-      setIsSubmitted(false)
+    setIsSending(true)
+    setError('')
+
+    try {
+      // EmailJS configuration
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_portfolio'
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_portfolio'
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'sajithjaganathan7@gmail.com'
+        },
+        publicKey
+      )
+
+      console.log('Email sent successfully:', result)
+      
+      // Show success message
+      setIsSubmitted(true)
       setFormData({ name: '', email: '', subject: '', message: '' })
-    }, 3000)
+      
+      setTimeout(() => {
+        setIsSubmitted(false)
+      }, 5000)
+      
+    } catch (error) {
+      console.error('Email sending failed:', error)
+      setError('Failed to send message. Please try again or email directly at sajithjaganathan7@gmail.com')
+      
+      setTimeout(() => {
+        setError('')
+      }, 5000)
+    } finally {
+      setIsSending(false)
+    }
   }
 
   const contactInfo = [
@@ -275,14 +306,39 @@ const Contact = () => {
                       />
                     </div>
                     
+                    {error && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-600 dark:text-red-400 px-4 py-3 rounded-lg text-sm"
+                      >
+                        {error}
+                      </motion.div>
+                    )}
+                    
                     <motion.button
                       type="submit"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                      disabled={isSending}
+                      whileHover={{ scale: isSending ? 1 : 1.02 }}
+                      whileTap={{ scale: isSending ? 1 : 0.98 }}
+                      className={`w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl ${
+                        isSending ? 'opacity-70 cursor-not-allowed' : ''
+                      }`}
                     >
-                      <PaperAirplaneIcon className="w-5 h-5" />
-                      Send Message
+                      {isSending ? (
+                        <>
+                          <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <PaperAirplaneIcon className="w-5 h-5" />
+                          Send Message
+                        </>
+                      )}
                     </motion.button>
                   </form>
                 )}
