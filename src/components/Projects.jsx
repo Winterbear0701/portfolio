@@ -26,6 +26,8 @@ const Projects = () => {
       techStack: ["Python","Flask", "YOLOv8", "PyTorch", "Computer Vision", "AI/ML"],
       icon: <FireIcon className="w-8 h-8" />,
       gradient: "from-red-500 to-orange-400",
+      contribution: "Individual Project",
+      role: null,
       features: [
         "Real-time Fire Detection",
         "Smoke Pattern Recognition",
@@ -45,6 +47,8 @@ const Projects = () => {
       techStack: ["Django", "Python", "JavaScript", "HTML", "Tailwind CSS", "Unity","Docker"],
       icon: <CpuChipIcon className="w-8 h-8" />,
       gradient: "from-red-400 to-orange-400",
+      contribution: "Individual Project",
+      role: null,
       features: [
         "Interactive Game Interface",
         "Morse Code Puzzles",
@@ -64,6 +68,8 @@ const Projects = () => {
       techStack: ["Python", "Django", "HTML", "CSS", "JavaScript", "RAG", "NLP","LLM"],
       icon: <ShieldCheckIcon className="w-8 h-8" />,
       gradient: "from-yellow-400 to-orange-400",
+      contribution: "Individual Project",
+      role: null,
       features: [
         "Advanced NLP Processing",
         "ML-based Detection",
@@ -83,6 +89,8 @@ const Projects = () => {
       techStack: ["Python", "Django","MongoDB", "Recommendation","Spam Detection", "Face Detection", "NLP"],
       icon: <BookOpenIcon className="w-8 h-8" />,
       gradient: "from-orange-400 to-red-400",
+      contribution: "Individual Project",
+      role: null,
       features: [
         "Intelligent Search System",
         "Personalized Recommendations",
@@ -103,7 +111,9 @@ const Projects = () => {
       description: "Built an AI-driven EV Management Platform integrating real-time telemetry, predictive battery analytics, and an intelligent RAG-powered chatbot. Implemented GRU networks for battery RUL prediction, linear models for SoH estimation, and interactive dashboards for EV insights and performance tracking.",
       techStack: ["Python", "Django","MongoDB", "TensorFlow","RAG", "LLMs"],
       icon: <BoltIcon className="w-8 h-8" />,
-      gradient: "from-green-400 to-blue-500",
+      gradient: "from-orange-400 to-yellow-400",
+      contribution: "Team Project",
+      role: "AI/ML Developer",
       features: [
         "Real-time Telemetry",
         "Predictive Battery Analytics",
@@ -217,10 +227,24 @@ const Projects = () => {
                       <div className={`p-3 rounded-xl bg-gradient-to-r ${project.gradient} text-white`}>
                         {project.icon}
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                           {project.title}
                         </h3>
+                        <div className="flex items-center gap-2 mt-2">
+                          <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                            project.contribution === 'Team Project'
+                              ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
+                              : 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300'
+                          }`}>
+                            {project.contribution}
+                          </span>
+                          {project.role && (
+                            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300">
+                              Role: {project.role}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
 
