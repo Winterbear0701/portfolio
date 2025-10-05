@@ -67,11 +67,11 @@ const Footer = () => {
         >
           <button
             onClick={scrollToTop}
-            className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-300"
+            className="group flex items-center gap-2 text-gray-400 hover:text-orange-500 transition-colors duration-300"
           >
             <span className="text-sm">Back to top</span>
-            <div className="p-1 bg-gray-800 rounded group-hover:bg-gray-700 transition-colors duration-300">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="p-1 bg-gradient-to-r from-orange-500 to-red-500 rounded group-hover:from-orange-600 group-hover:to-red-600 transition-all duration-300">
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
               </svg>
             </div>

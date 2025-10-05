@@ -32,8 +32,16 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would typically send the form data to a backend service
-    // For demo purposes, we'll just show a success message
+    
+    // Construct mailto link with form data
+    const mailtoLink = `mailto:sajithjaganathan7@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`
+    
+    // Open user's email client
+    window.location.href = mailtoLink
+    
+    // Show success message
     setIsSubmitted(true)
     setTimeout(() => {
       setIsSubmitted(false)

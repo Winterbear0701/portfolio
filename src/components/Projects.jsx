@@ -207,51 +207,6 @@ const Projects = () => {
             </motion.p>
           </div>
 
-          {/* Pagination Controls */}
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
-              disabled={currentPage === 0}
-              className={`p-3 rounded-full transition-all duration-300 ${
-                currentPage === 0
-                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
-              }`}
-            >
-              <ChevronLeftIcon className="w-6 h-6" />
-            </motion.button>
-
-            <div className="flex items-center gap-2">
-              {Array.from({ length: Math.ceil(projects.length / projectsPerPage) }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentPage(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentPage === index
-                      ? 'bg-orange-500 w-8'
-                      : 'bg-gray-600 hover:bg-gray-500'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setCurrentPage(prev => Math.min(Math.ceil(projects.length / projectsPerPage) - 1, prev + 1))}
-              disabled={currentPage === Math.ceil(projects.length / projectsPerPage) - 1}
-              className={`p-3 rounded-full transition-all duration-300 ${
-                currentPage === Math.ceil(projects.length / projectsPerPage) - 1
-                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
-              }`}
-            >
-              <ChevronRightIcon className="w-6 h-6" />
-            </motion.button>
-          </div>
-
           {/* Projects Grid with Animation */}
           <AnimatePresence mode="wait">
             <motion.div
@@ -264,25 +219,32 @@ const Projects = () => {
             >
               {projects
                 .slice(currentPage * projectsPerPage, (currentPage + 1) * projectsPerPage)
-                .map((project, index) => (
+                .map((project, localIndex) => {
+                  const globalIndex = currentPage * projectsPerPage + localIndex;
+                  // Alternate gradients: even index = orange, odd index = yellow
+                  const displayGradient = globalIndex % 2 === 0 
+                    ? 'from-orange-500 to-red-500' 
+                    : 'from-yellow-400 to-orange-400';
+                  
+                  return (
                   <motion.div
                     key={project.title}
                     variants={itemVariants}
                     initial="hidden"
                     animate="visible"
                     className={`grid lg:grid-cols-2 gap-8 items-center ${
-                      index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                      localIndex % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
                     }`}
                   >
                 {/* Project Content */}
-                <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                <div className={`${localIndex % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
                   >
                     {/* Project Header */}
                     <div className="flex items-center gap-4 mb-6">
-                      <div className={`p-3 rounded-xl bg-gradient-to-r ${project.gradient} text-white`}>
+                      <div className={`p-3 rounded-xl bg-gradient-to-r ${displayGradient} text-white`}>
                         {project.icon}
                       </div>
                       <div className="flex-1">
@@ -374,10 +336,10 @@ const Projects = () => {
                 </div>
 
                 {/* Project Features/Visual */}
-                <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                <div className={`${localIndex % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className={`bg-gradient-to-br ${project.gradient} rounded-2xl p-8 text-white h-full`}
+                    className={`bg-gradient-to-br ${displayGradient} rounded-2xl p-8 text-white h-full`}
                   >
                     <h4 className="text-xl font-semibold mb-6">Key Features</h4>
                     <div className="space-y-4">
@@ -388,7 +350,7 @@ const Projects = () => {
                           animate={inView ? { opacity: 1, x: 0 } : {}}
                           transition={{ 
                             duration: 0.5, 
-                            delay: 0.5 + (index * 0.2) + (featureIndex * 0.1) 
+                            delay: 0.5 + (localIndex * 0.2) + (featureIndex * 0.1) 
                           }}
                           className="flex items-center gap-3"
                         >
@@ -406,9 +368,55 @@ const Projects = () => {
                   </motion.div>
                 </div>
               </motion.div>
-            ))}
+                  );
+                })}
             </motion.div>
           </AnimatePresence>
+
+          {/* Pagination Controls Below Content */}
+          <div className="flex items-center justify-center gap-4 mt-12">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
+              disabled={currentPage === 0}
+              className={`p-3 rounded-full transition-all duration-300 ${
+                currentPage === 0
+                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
+              }`}
+            >
+              <ChevronLeftIcon className="w-6 h-6" />
+            </motion.button>
+
+            <div className="flex items-center gap-2">
+              {Array.from({ length: Math.ceil(projects.length / projectsPerPage) }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentPage(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentPage === index
+                      ? 'bg-orange-500 w-8'
+                      : 'bg-gray-600 hover:bg-gray-500'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setCurrentPage(prev => Math.min(Math.ceil(projects.length / projectsPerPage) - 1, prev + 1))}
+              disabled={currentPage === Math.ceil(projects.length / projectsPerPage) - 1}
+              className={`p-3 rounded-full transition-all duration-300 ${
+                currentPage === Math.ceil(projects.length / projectsPerPage) - 1
+                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
+              }`}
+            >
+              <ChevronRightIcon className="w-6 h-6" />
+            </motion.button>
+          </div>
 
           {/* Call to Action */}
           <motion.div
@@ -424,7 +432,7 @@ const Projects = () => {
               href="https://github.com/Winterbear0701"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             >
               <ArrowTopRightOnSquareIcon className="w-5 h-5" />
               View All Projects on GitHub

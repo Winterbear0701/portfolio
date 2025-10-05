@@ -23,7 +23,7 @@ const Publications = () => {
       status: "Published",
       description: "Comprehensive research on developing an AI-powered system for detecting and flagging misinformation using advanced NLP techniques and machine learning algorithms.",
       icon: <DocumentTextIcon className="w-8 h-8" />,
-      gradient: "from-green-500 to-emerald-600",
+      gradient: "from-orange-500 to-red-500",
       highlights: [
         "Novel NLP approach for misinformation detection",
         "Implementation of RAG (Retrieval-Augmented Generation)",
@@ -39,7 +39,7 @@ const Publications = () => {
       status: "Application Number: 17432",
       description: "Patent application for innovative misinformation detection methodology combining machine learning, natural language processing, and content verification techniques.",
       icon: <LightBulbIcon className="w-8 h-8" />,
-      gradient: "from-blue-500 to-purple-600",
+      gradient: "from-yellow-400 to-orange-500",
       highlights: [
         "Unique algorithmic approach to content verification",
         "Integration of multiple ML models",
@@ -86,7 +86,7 @@ const Publications = () => {
               initial={{ width: 0 }}
               animate={inView ? { width: '4rem' } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"
+              className="h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto rounded-full"
             />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -164,7 +164,7 @@ const Publications = () => {
                             }}
                             className="flex items-start gap-3"
                           >
-                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-gray-600 dark:text-gray-300 text-sm">
                               {highlight}
                             </span>
@@ -217,8 +217,8 @@ const Publications = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="mt-16 text-center"
           >
-            <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
-              <ShieldCheckIcon className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-4" />
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
+              <ShieldCheckIcon className="w-12 h-12 text-orange-600 dark:text-orange-400 mx-auto mb-4" />
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
                 Future Research Goals
               </h3>

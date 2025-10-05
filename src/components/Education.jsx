@@ -410,51 +410,6 @@ const Education = ({ darkMode }) => {
               Certifications
             </motion.h3>
 
-            {/* Pagination Controls for Certifications */}
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setCurrentCertPage(prev => Math.max(0, prev - 1))}
-                disabled={currentCertPage === 0}
-                className={`p-3 rounded-full transition-all duration-300 ${
-                  currentCertPage === 0
-                    ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
-                }`}
-              >
-                <ChevronLeftIcon className="w-6 h-6" />
-              </motion.button>
-
-              <div className="flex items-center gap-2">
-                {Array.from({ length: Math.ceil(certifications.length / certificatesPerPage) }).map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentCertPage(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      currentCertPage === index
-                        ? 'bg-orange-500 w-8'
-                        : 'bg-gray-600 hover:bg-gray-500'
-                    }`}
-                  />
-                ))}
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setCurrentCertPage(prev => Math.min(Math.ceil(certifications.length / certificatesPerPage) - 1, prev + 1))}
-                disabled={currentCertPage === Math.ceil(certifications.length / certificatesPerPage) - 1}
-                className={`p-3 rounded-full transition-all duration-300 ${
-                  currentCertPage === Math.ceil(certifications.length / certificatesPerPage) - 1
-                    ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
-                    : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
-                }`}
-              >
-                <ChevronRightIcon className="w-6 h-6" />
-              </motion.button>
-            </div>
-
             {/* Certifications Grid with Animation */}
             <AnimatePresence mode="wait">
               <motion.div
@@ -641,6 +596,51 @@ const Education = ({ darkMode }) => {
               ))}
               </motion.div>
             </AnimatePresence>
+
+            {/* Pagination Controls Below Certifications */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setCurrentCertPage(prev => Math.max(0, prev - 1))}
+                disabled={currentCertPage === 0}
+                className={`p-3 rounded-full transition-all duration-300 ${
+                  currentCertPage === 0
+                    ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
+                }`}
+              >
+                <ChevronLeftIcon className="w-6 h-6" />
+              </motion.button>
+
+              <div className="flex items-center gap-2">
+                {Array.from({ length: Math.ceil(certifications.length / certificatesPerPage) }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentCertPage(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      currentCertPage === index
+                        ? 'bg-orange-500 w-8'
+                        : 'bg-gray-600 hover:bg-gray-500'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={() => setCurrentCertPage(prev => Math.min(Math.ceil(certifications.length / certificatesPerPage) - 1, prev + 1))}
+                disabled={currentCertPage === Math.ceil(certifications.length / certificatesPerPage) - 1}
+                className={`p-3 rounded-full transition-all duration-300 ${
+                  currentCertPage === Math.ceil(certifications.length / certificatesPerPage) - 1
+                    ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
+                }`}
+              >
+                <ChevronRightIcon className="w-6 h-6" />
+              </motion.button>
+            </div>
           </motion.div>
 
           {/* Activities */}
