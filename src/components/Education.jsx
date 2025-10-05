@@ -50,10 +50,10 @@ const Education = ({ darkMode }) => {
     {
       degree: "B.Tech - Artificial Intelligence and Data Science",
       institution: "Sri Shakthi Institute of Engineering and Technology",
-      duration: "2022 - 2026",
+      duration: "2023 - 2027",
       cgpa: "8.6",
       location: "Coimbatore, India",
-      description: "Comprehensive program covering AI fundamentals, machine learning algorithms, data structures, and advanced analytics with hands-on project experience.",
+      description: "Comprehensive program covering AI fundamentals, machine learning algorithms, data structures, and GenAI with hands-on project experience.",
       highlights: [
         "Interactive participation in class",
         "Active in technical events",
@@ -63,8 +63,8 @@ const Education = ({ darkMode }) => {
     {
       degree: "Higher Secondary Education",
       institution: "Vivek Vidyalaya Matric Hr. Sec. School",
-      duration: "2020 - 2022",
-      cgpa: "86%",
+      duration: "2022 - 2023",
+      Mark: "86%",
       location: "Coimbatore, India",
       description: "Strong foundation in Mathematics, Physics, and Computer Science with focus on analytical thinking and problem-solving skills.",
       highlights: [
@@ -77,81 +77,63 @@ const Education = ({ darkMode }) => {
 
   const certifications = [
     {
-      name: "Advanced Python Programming",
-      issuer: "Coursera",
-      date: "March 2024",
-      duration: "6 weeks",
-      skills: ["Python", "OOP", "Data Structures"],
-      description: "Comprehensive course covering advanced Python concepts including object-oriented programming, data structures, and algorithm optimization.",
-      credentialId: "CERT-PY-2024-001",
-      image: "/certificates/python-advanced.jpg", // Add your certificate image path here
-      verifyUrl: "https://coursera.org/verify/CERT-PY-2024-001"
-    },
-    {
       name: "Big Data 101",
       issuer: "IBM",
-      date: "February 2024", 
-      duration: "4 weeks",
-      skills: ["Hadoop", "Spark", "Data Analytics"],
-      description: "Introduction to big data technologies, distributed computing, and large-scale data processing frameworks.",
-      credentialId: "IBM-BD-2024-002",
-      image: "/certificates/ibm-bigdata.jpg",
-      verifyUrl: "https://ibm.com/verify/IBM-BD-2024-002"
-    },
-    {
-      name: "Design Thinking Workshop",
-      issuer: "IDEO",
-      date: "January 2024",
-      duration: "2 weeks",
-      skills: ["Creative Thinking", "Problem Solving", "UX Design"],
-      description: "Human-centered design methodology for solving complex problems through empathy, ideation, and prototyping.",
-      credentialId: "IDEO-DT-2024-003",
-      image: "/certificates/ideo-design-thinking.jpg",
-      verifyUrl: "https://ideo.com/verify/IDEO-DT-2024-003"
-    },
-    {
-      name: "Microsoft PowerPoint",
-      issuer: "Microsoft",
-      date: "December 2023",
+      date: "07/04/2025", 
       duration: "1 week",
-      skills: ["Presentation", "Visual Design", "Communication"],
-      description: "Advanced presentation design techniques, animation, and professional communication strategies.",
-      credentialId: "MS-PPT-2023-004",
-      image: "/certificates/microsoft-powerpoint.jpg",
-      verifyUrl: "https://microsoft.com/verify/MS-PPT-2023-004"
+      skills: ["Hadoop", "Spark", "Linux"],
+      description: "Introduction to big data technologies, distributed computing, and large-scale data processing frameworks.",
+      image: "/images/Certifications/big-data-101.png"
     },
+
     {
-      name: "SQL Fundamentals",
-      issuer: "Oracle",
-      date: "November 2023",
-      duration: "3 weeks",
-      skills: ["SQL", "Database Design", "Data Querying"],
-      description: "Comprehensive database management and SQL query optimization for efficient data retrieval and manipulation.",
-      credentialId: "ORA-SQL-2023-005",
-      image: "/certificates/oracle-sql.jpg",
-      verifyUrl: "https://oracle.com/verify/ORA-SQL-2023-005"
+      name: "Deutsch A1",
+      issuer: "Goethe Zentrum",
+      date: "14/05/2025",
+      duration: "3 months",
+      skills: ["German Language", "Basic Communication", "Basic Grammar"],
+      description: "Basic German language proficiency certification demonstrating fundamental communication skills.",
+      image: "/images/Certifications/Deutsch-A1.png"
     },
+
     {
       name: "Introduction to Data Science",
-      issuer: "edX",
-      date: "October 2023",
-      duration: "8 weeks",
-      skills: ["Statistics", "Machine Learning", "Data Visualization"],
-      description: "Foundation course covering statistical analysis, machine learning algorithms, and data visualization techniques.",
-      credentialId: "EDX-DS-2023-006",
-      image: "/certificates/edx-data-science.jpg",
-      verifyUrl: "https://edx.org/verify/EDX-DS-2023-006"
+      issuer: "Online Platform",
+      date: "30/05/2025",
+      duration: "1 week",
+      skills: [ "Machine Learning", "Data Visualization"],
+      description: "Foundation course covering machine learning algorithms, and data visualization techniques.",
+      image: "/images/Certifications/introduction to data science.png"
     },
+
     {
-      name: "Get Started with Generative AI",
-      issuer: "Google Cloud",
-      date: "September 2023",
+      name: "Intel GenAI",
+      issuer: "Intel",
+      date: "11/06/2024",
       duration: "2 weeks",
-      skills: ["AI/ML", "Neural Networks", "NLP"],
-      description: "Exploring generative AI technologies, large language models, and practical applications in modern software development.",
-      credentialId: "GCP-AI-2023-007",
-      image: "/certificates/google-ai.jpg",
-      verifyUrl: "https://cloud.google.com/verify/GCP-AI-2023-007"
+      skills: ["NLP", "Transformers", "RAG","LLMs"],
+      description: "Comprehensive course on Generative AI technologies and their applications in modern computing.",
+      image: "/images/Certifications/intel-genai.png"
+    },
+    
+    {
+      name: "Prompt Engineering",
+      issuer: "Internshala",
+      date: "15/07/2025",
+      duration: "4 weeks",
+      skills: ["Prompt Engineering", "LLMs", "AI Applications"],
+      description: "Advanced techniques for crafting effective prompts for large language models and AI systems.",
+      image: "/images/Certifications/Prompt Engineering.png"
+    },
+
+    {
+      name: "Microsoft X Edunet Internship",
+      issuer: "Microsoft & Edunet Foundation",
+      date: "01/08/2025",
+      duration: "4 weeks",
+      skills: ["Cloud Computing", "AI", "Computer Vision","Machine Learning","NLP"],
+      description: "Internship program focused on Microsoft Azure cloud technologies and professional skill development.",
+      image: "/images/Certifications/microsoftXedunet-internship.png"
     }
   ]
 
@@ -360,11 +342,11 @@ const Education = ({ darkMode }) => {
                             <span className={`text-sm font-medium transition-colors duration-300 ${
                               darkMode ? 'text-gray-300' : 'text-gray-600'
                             }`}>
-                              Grade
+                              {edu.cgpa ? 'CGPA' : 'Marks'}
                             </span>
                           </div>
                           <div className="text-2xl font-bold text-center bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                            {edu.cgpa}
+                            {edu.cgpa || edu.Mark}
                           </div>
                         </motion.div>
                         
@@ -584,29 +566,11 @@ const Education = ({ darkMode }) => {
                               onClick={(e) => openCertificateModal(cert, e)}
                               whileHover={{ scale: 1.05 }}
                               whileTap={{ scale: 0.95 }}
-                              className="flex-1 bg-orange-500 hover:bg-orange-600 text-white text-xs py-2 px-3 rounded-md flex items-center justify-center gap-1 font-medium"
+                              className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs py-2 px-3 rounded-md flex items-center justify-center gap-1 font-medium"
                             >
                               <EyeIcon className="w-3 h-3" />
-                              View
+                              View Full Certificate
                             </motion.button>
-                            {cert.verifyUrl && (
-                              <motion.a
-                                href={cert.verifyUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className={`flex-1 border text-xs py-2 px-3 rounded-md flex items-center justify-center gap-1 font-medium transition-colors ${
-                                  darkMode 
-                                    ? 'border-orange-500 text-orange-400 hover:bg-orange-500 hover:text-white' 
-                                    : 'border-orange-500 text-orange-600 hover:bg-orange-500 hover:text-white'
-                                }`}
-                              >
-                                <ArrowTopRightOnSquareIcon className="w-3 h-3" />
-                                Verify
-                              </motion.a>
-                            )}
                           </div>
                         </div>
                       </div>
@@ -844,11 +808,6 @@ const Education = ({ darkMode }) => {
                   </div>
 
                   <div>
-                    <h4 className={`font-semibold mb-2 ${
-                      darkMode ? 'text-white' : 'text-gray-900'
-                    }`}>
-                      Credential ID
-                    </h4>
                     <p className={`text-sm font-mono ${
                       darkMode ? 'text-gray-300' : 'text-gray-600'
                     }`}>

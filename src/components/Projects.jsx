@@ -7,7 +7,8 @@ import {
   CpuChipIcon,
   ShieldCheckIcon,
   BookOpenIcon,
-  FireIcon
+  FireIcon,
+  BoltIcon
 } from '@heroicons/react/24/outline'
 import ThreeDBackground from './ThreeDBackground'
 import AnimatedBackground from './AnimatedBackground'
@@ -22,7 +23,7 @@ const Projects = () => {
     {
       title: "Fire & Smoke Detection System",
       description: "Developed an advanced computer vision system using YOLOv8 for real-time fire and smoke detection. Implemented early warning capabilities for enhanced safety monitoring with high accuracy object detection and alert mechanisms.",
-      techStack: ["Python", "YOLOv8", "OpenCV", "PyTorch", "Computer Vision", "AI/ML"],
+      techStack: ["Python","Flask", "YOLOv8", "PyTorch", "Computer Vision", "AI/ML"],
       icon: <FireIcon className="w-8 h-8" />,
       gradient: "from-red-500 to-orange-400",
       features: [
@@ -33,32 +34,15 @@ const Projects = () => {
         "High Accuracy Models",
         "Safety Alert Integration"
       ],
-      githubUrl: "https://github.com/sajith-070106/fire-smoke-detection",
+      githubUrl: "https://github.com/Winterbear0701/Advanced-Fire-Smoke-Detection.git",
       liveUrl: "#", // Add your demo link if available
       status: "Completed"
     },
-    {
-      title: "VerseVault – AI Powered Library",
-      description: "Developed an AI-powered Smart Library with intelligent search, personalized recommendations, and spam review detection. Integrated face detection, offline voice search, and user analytics for enhanced user experience.",
-      techStack: ["Python", "Streamlit", "AI/ML", "Face Detection", "NLP"],
-      icon: <BookOpenIcon className="w-8 h-8" />,
-      gradient: "from-orange-400 to-red-400",
-      features: [
-        "Intelligent Search System",
-        "Personalized Recommendations",
-        "Spam Review Detection",
-        "Face Detection Integration",
-        "Offline Voice Search",
-        "User Analytics Dashboard"
-      ],
-      githubUrl: "https://github.com/sajith-070106/versevault-ai-library",
-      liveUrl: "#", // Add your demo link if available
-      status: "Completed"
-    },
+    
     {
       title: "Cipher-Chase",
       description: "Built a website-based game for a college event, showcasing full-stack implementation with programming and Morse-code puzzle integration. Created an engaging interactive experience combining web development with game design.",
-      techStack: ["Django", "Python", "JavaScript", "HTML", "Tailwind CSS", "Unity"],
+      techStack: ["Django", "Python", "JavaScript", "HTML", "Tailwind CSS", "Unity","Docker"],
       icon: <CpuChipIcon className="w-8 h-8" />,
       gradient: "from-red-400 to-orange-400",
       features: [
@@ -67,16 +51,17 @@ const Projects = () => {
         "Real-time Scoring",
         "Event Management System",
         "Responsive Design",
+        "Compiler Integration",
         "Unity Integration"
       ],
-      githubUrl: "https://github.com/sajith-070106/cipher-chase",
+      githubUrl: "https://github.com/Winterbear0701/Chiper-Chase.git",
       liveUrl: "#", // Add your demo link if available
       status: "Completed"
     },
     {
       title: "MythSnare – Misinformation Detection",
       description: "Created a comprehensive system to detect and flag misinformation using advanced NLP and machine learning techniques. Ensures information integrity through sophisticated content analysis and verification mechanisms.",
-      techStack: ["Python", "Django", "HTML", "CSS", "JavaScript", "RAG", "NLP"],
+      techStack: ["Python", "Django", "HTML", "CSS", "JavaScript", "RAG", "NLP","LLM"],
       icon: <ShieldCheckIcon className="w-8 h-8" />,
       gradient: "from-yellow-400 to-orange-400",
       features: [
@@ -87,7 +72,48 @@ const Projects = () => {
         "RAG Implementation",
         "User-friendly Dashboard"
       ],
-      githubUrl: "https://github.com/sajith-070106/mythsnare-misinformation-detection",
+      githubUrl: "https://github.com/Winterbear0701/MythSnare.git",
+      liveUrl: "#", // Add your demo link if available
+      status: "Completed"
+    },
+    
+    {
+      title: "VerseVault – AI Powered Library",
+      description: "Developed an AI-powered Smart Library with intelligent search, personalized recommendations, and spam review detection. Integrated face detection, offline voice search, and user analytics for enhanced user experience.",
+      techStack: ["Python", "Django","MongoDB", "Recommendation","Spam Detection", "Face Detection", "NLP"],
+      icon: <BookOpenIcon className="w-8 h-8" />,
+      gradient: "from-orange-400 to-red-400",
+      features: [
+        "Intelligent Search System",
+        "Personalized Recommendations",
+        "Spam Review Detection",
+        "Face Detection Integration",
+        "Offline Voice Search",
+        "User Analytics Dashboard",
+        "Admin Analytics Dashboard"
+      ],
+      githubUrl: "https://github.com/Winterbear0701/VerseVault.git",
+      liveUrl: "#", // Add your demo link if available
+      status: "Completed"
+    }
+    ,
+    
+    {
+      title: "FlexiEV -  AI-Driven EV Management Platform",
+      description: "Built an AI-driven EV Management Platform integrating real-time telemetry, predictive battery analytics, and an intelligent RAG-powered chatbot. Implemented GRU networks for battery RUL prediction, linear models for SoH estimation, and interactive dashboards for EV insights and performance tracking.",
+      techStack: ["Python", "Django","MongoDB", "TensorFlow","RAG", "LLMs"],
+      icon: <BoltIcon className="w-8 h-8" />,
+      gradient: "from-green-400 to-blue-500",
+      features: [
+        "Real-time Telemetry",
+        "Predictive Battery Analytics",
+        "RAG-powered Chatbot",
+        "GRU Networks for RUL Prediction",
+        "Linear Models for SoH Estimation",
+        "Interactive Dashboards",
+        "Admin Analytics Dashboard"
+      ],
+      githubUrl: "https://github.com/Winterbear0701/FlexiEV.git",
       liveUrl: "#", // Add your demo link if available
       status: "Completed"
     }
@@ -311,10 +337,15 @@ const Projects = () => {
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
               Want to see more of my work?
             </p>
-            <button className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+            <a 
+              href="https://github.com/Winterbear0701"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            >
               <ArrowTopRightOnSquareIcon className="w-5 h-5" />
               View All Projects on GitHub
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </div>

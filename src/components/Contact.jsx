@@ -45,8 +45,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      value: "sajithjaganathan7@gmail.com",
-      link: "mailto:sajithjaganathan7@gmail.com"
+      value: "jsajith67@gmail.com",
+      link: "mailto:jsajith67@gmail.com"
     },
     {
       icon: <MapPinIcon className="w-6 h-6" />,
@@ -63,8 +63,8 @@ const Contact = () => {
     {
       icon: <Github className="w-6 h-6" />,
       label: "GitHub",
-      value: "sajith-070106",
-      link: "https://github.com/sajith-070106"
+      value: "Winterbear0701",
+      link: "https://github.com/Winterbear0701"
     }
   ]
 
