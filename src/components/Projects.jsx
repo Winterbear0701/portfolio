@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useState } from 'react'
 import { 
   ArrowTopRightOnSquareIcon, 
   CodeBracketIcon,
@@ -8,7 +9,9 @@ import {
   ShieldCheckIcon,
   BookOpenIcon,
   FireIcon,
-  BoltIcon
+  BoltIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
 } from '@heroicons/react/24/outline'
 import ThreeDBackground from './ThreeDBackground'
 import AnimatedBackground from './AnimatedBackground'
@@ -18,6 +21,9 @@ const Projects = () => {
     triggerOnce: true,
     threshold: 0.1
   })
+
+  const [currentPage, setCurrentPage] = useState(0)
+  const projectsPerPage = 2
 
   const projects = [
     {
@@ -201,21 +207,73 @@ const Projects = () => {
             </motion.p>
           </div>
 
-          {/* Projects Grid */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            className="space-y-12"
-          >
-            {projects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                variants={itemVariants}
-                className={`grid lg:grid-cols-2 gap-8 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
-              >
+          {/* Pagination Controls */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setCurrentPage(prev => Math.max(0, prev - 1))}
+              disabled={currentPage === 0}
+              className={`p-3 rounded-full transition-all duration-300 ${
+                currentPage === 0
+                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
+              }`}
+            >
+              <ChevronLeftIcon className="w-6 h-6" />
+            </motion.button>
+
+            <div className="flex items-center gap-2">
+              {Array.from({ length: Math.ceil(projects.length / projectsPerPage) }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentPage(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentPage === index
+                      ? 'bg-orange-500 w-8'
+                      : 'bg-gray-600 hover:bg-gray-500'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setCurrentPage(prev => Math.min(Math.ceil(projects.length / projectsPerPage) - 1, prev + 1))}
+              disabled={currentPage === Math.ceil(projects.length / projectsPerPage) - 1}
+              className={`p-3 rounded-full transition-all duration-300 ${
+                currentPage === Math.ceil(projects.length / projectsPerPage) - 1
+                  ? 'bg-gray-700 text-gray-500 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-orange-500 to-red-500 text-white hover:shadow-lg'
+              }`}
+            >
+              <ChevronRightIcon className="w-6 h-6" />
+            </motion.button>
+          </div>
+
+          {/* Projects Grid with Animation */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentPage}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-12"
+            >
+              {projects
+                .slice(currentPage * projectsPerPage, (currentPage + 1) * projectsPerPage)
+                .map((project, index) => (
+                  <motion.div
+                    key={project.title}
+                    variants={itemVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className={`grid lg:grid-cols-2 gap-8 items-center ${
+                      index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                    }`}
+                  >
                 {/* Project Content */}
                 <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <motion.div
@@ -349,7 +407,8 @@ const Projects = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+            </motion.div>
+          </AnimatePresence>
 
           {/* Call to Action */}
           <motion.div
