@@ -21,6 +21,8 @@ const Publications = () => {
       journal: "IJRPR (International Journal of Research and Publication Reviews)",
       date: "May 2025",
       status: "Published",
+      paperId: "IJRPR-147472",
+      certificateUrl: "https://ijrpr.com/certificate/download.php?paper_id=30524",
       description: "Comprehensive research on developing an AI-powered system for detecting and flagging misinformation using advanced NLP techniques and machine learning algorithms.",
       icon: <DocumentTextIcon className="w-8 h-8" />,
       gradient: "from-orange-500 to-red-500",
@@ -29,22 +31,6 @@ const Publications = () => {
         "Implementation of RAG (Retrieval-Augmented Generation)",
         "Real-time content analysis and verification",
         "Significant accuracy improvements over existing methods"
-      ]
-    },
-    {
-      type: "Patent Application",
-      title: "MythSnare - Misinformation Detection System",
-      journal: "Indian Patent Office",
-      date: "Filed: 14 May 2025",
-      status: "Application Number: 17432",
-      description: "Patent application for innovative misinformation detection methodology combining machine learning, natural language processing, and content verification techniques.",
-      icon: <LightBulbIcon className="w-8 h-8" />,
-      gradient: "from-yellow-400 to-orange-500",
-      highlights: [
-        "Unique algorithmic approach to content verification",
-        "Integration of multiple ML models",
-        "Scalable architecture for real-time processing",
-        "Novel feature extraction techniques"
       ]
     }
   ]
@@ -129,13 +115,30 @@ const Publications = () => {
                       <div className="text-white/90 text-sm">
                         {pub.journal}
                       </div>
+                      {pub.paperId && (
+                        <div className="text-white/90 text-sm font-medium">
+                          Paper ID: {pub.paperId}
+                        </div>
+                      )}
                     </div>
 
                     {/* Action Button */}
-                    <button className="mt-6 w-full bg-white/20 hover:bg-white/30 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2">
-                      <ArrowTopRightOnSquareIcon className="w-5 h-5" />
-                      View Publication
-                    </button>
+                    {pub.certificateUrl ? (
+                      <a
+                        href={pub.certificateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 w-full bg-white/20 hover:bg-white/30 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2"
+                      >
+                        <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+                        View Publication Certificate
+                      </a>
+                    ) : (
+                      <button className="mt-6 w-full bg-white/20 hover:bg-white/30 text-white py-3 px-4 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2">
+                        <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+                        View Publication
+                      </button>
+                    )}
                   </div>
 
                   {/* Publication Content */}

@@ -74,8 +74,8 @@ const Projects = () => {
       techStack: ["Python", "Django", "HTML", "CSS", "JavaScript", "RAG", "NLP","LLM"],
       icon: <ShieldCheckIcon className="w-8 h-8" />,
       gradient: "from-yellow-400 to-orange-400",
-      contribution: "Individual Project",
-      role: null,
+      contribution: "Team Project",
+      role: "AI/ML Developer",
       features: [
         "Advanced NLP Processing",
         "ML-based Detection",
