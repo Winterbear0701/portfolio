@@ -26,27 +26,73 @@ const Projects = () => {
   const projectsPerPage = 2
 
   const projects = [
+
     {
-      title: "Fire & Smoke Detection System",
-      description: "Developed an advanced computer vision system using YOLOv8 for real-time fire and smoke detection. Implemented early warning capabilities for enhanced safety monitoring with high accuracy object detection and alert mechanisms.",
-      techStack: ["Python","Flask", "YOLOv8", "PyTorch", "Computer Vision", "AI/ML"],
-      icon: <FireIcon className="w-8 h-8" />,
-      gradient: "from-red-500 to-orange-400",
-      contribution: "Individual Project",
-      role: null,
+      title: "FlexiEV -  AI-Driven EV Management Platform",
+      description: "Built an AI-driven EV Management Platform integrating real-time telemetry, predictive battery analytics, and an intelligent RAG-powered chatbot. Implemented GRU networks for battery RUL prediction, linear models for SoH estimation, and interactive dashboards for EV insights and performance tracking.",
+      techStack: ["Python", "Django","MongoDB", "TensorFlow","RAG", "LLMs"],
+      icon: <BoltIcon className="w-8 h-8" />,
+      gradient: "from-orange-400 to-yellow-400",
+      contribution: "Team Project",
+      role: "AI/ML Developer",
       features: [
-        "Real-time Fire Detection",
-        "Smoke Pattern Recognition",
-        "YOLOv8 Object Detection",
-        "Early Warning System",
-        "High Accuracy Models",
-        "Safety Alert Integration"
+        "Real-time Telemetry",
+        "Predictive Battery Analytics",
+        "RAG-powered Chatbot",
+        "GRU Networks for RUL Prediction",
+        "Linear Models for SoH Estimation",
+        "Interactive Dashboards",
+        "Admin Analytics Dashboard"
       ],
-      githubUrl: "https://github.com/Winterbear0701/Advanced-Fire-Smoke-Detection.git",
+      githubUrl: "https://github.com/Winterbear0701/FlexiEV.git",
       liveUrl: "#", // Add your demo link if available
       status: "Completed"
     },
+
     
+    {
+      title: "VerseVault – AI Powered Library",
+      description: "Developed an AI-powered Smart Library with intelligent search, personalized recommendations, and spam review detection. Integrated face detection, offline voice search, and user analytics for enhanced user experience.",
+      techStack: ["Python", "Django","MongoDB", "Recommendation","Spam Detection", "Face Detection", "NLP"],
+      icon: <BookOpenIcon className="w-8 h-8" />,
+      gradient: "from-orange-400 to-red-400",
+      contribution: "Individual Project",
+      role: null,
+      features: [
+        "Intelligent Search System",
+        "Personalized Recommendations",
+        "Spam Review Detection",
+        "Face Detection Integration",
+        "Offline Voice Search",
+        "User Analytics Dashboard",
+        "Admin Analytics Dashboard"
+      ],
+      githubUrl: "https://github.com/Winterbear0701/VerseVault.git",
+      liveUrl: "#", // Add your demo link if available
+      status: "Completed"
+    },
+
+    {
+      title: "MythSnare – Misinformation Detection",
+      description: "Created a comprehensive system to detect and flag misinformation using advanced NLP and machine learning techniques. Ensures information integrity through sophisticated content analysis and verification mechanisms.",
+      techStack: ["Python", "Django", "HTML", "CSS", "JavaScript", "RAG", "NLP","LLM"],
+      icon: <ShieldCheckIcon className="w-8 h-8" />,
+      gradient: "from-yellow-400 to-orange-400",
+      contribution: "Team Project",
+      role: "AI/ML Developer",
+      features: [
+        "Advanced NLP Processing",
+        "ML-based Detection",
+        "Real-time Analysis",
+        "Content Verification",
+        "RAG Implementation",
+        "User-friendly Dashboard"
+      ],
+      githubUrl: "https://github.com/Winterbear0701/MythSnare.git",
+      liveUrl: "#", // Add your demo link if available
+      status: "Completed"
+    },
+
     {
       title: "Cipher-Chase",
       description: "Built a website-based game for a college event, showcasing full-stack implementation with programming and Morse-code puzzle integration. Created an engaging interactive experience combining web development with game design.",
@@ -69,67 +115,22 @@ const Projects = () => {
       status: "Completed"
     },
     {
-      title: "MythSnare – Misinformation Detection",
-      description: "Created a comprehensive system to detect and flag misinformation using advanced NLP and machine learning techniques. Ensures information integrity through sophisticated content analysis and verification mechanisms.",
-      techStack: ["Python", "Django", "HTML", "CSS", "JavaScript", "RAG", "NLP","LLM"],
-      icon: <ShieldCheckIcon className="w-8 h-8" />,
-      gradient: "from-yellow-400 to-orange-400",
-      contribution: "Team Project",
-      role: "AI/ML Developer",
-      features: [
-        "Advanced NLP Processing",
-        "ML-based Detection",
-        "Real-time Analysis",
-        "Content Verification",
-        "RAG Implementation",
-        "User-friendly Dashboard"
-      ],
-      githubUrl: "https://github.com/Winterbear0701/MythSnare.git",
-      liveUrl: "#", // Add your demo link if available
-      status: "Completed"
-    },
-    
-    {
-      title: "VerseVault – AI Powered Library",
-      description: "Developed an AI-powered Smart Library with intelligent search, personalized recommendations, and spam review detection. Integrated face detection, offline voice search, and user analytics for enhanced user experience.",
-      techStack: ["Python", "Django","MongoDB", "Recommendation","Spam Detection", "Face Detection", "NLP"],
-      icon: <BookOpenIcon className="w-8 h-8" />,
-      gradient: "from-orange-400 to-red-400",
+      title: "Fire & Smoke Detection System",
+      description: "Developed an advanced computer vision system using YOLOv8 for real-time fire and smoke detection. Implemented early warning capabilities for enhanced safety monitoring with high accuracy object detection and alert mechanisms.",
+      techStack: ["Python","Flask", "YOLOv8", "PyTorch", "Computer Vision", "AI/ML"],
+      icon: <FireIcon className="w-8 h-8" />,
+      gradient: "from-red-500 to-orange-400",
       contribution: "Individual Project",
       role: null,
       features: [
-        "Intelligent Search System",
-        "Personalized Recommendations",
-        "Spam Review Detection",
-        "Face Detection Integration",
-        "Offline Voice Search",
-        "User Analytics Dashboard",
-        "Admin Analytics Dashboard"
+        "Real-time Fire Detection",
+        "Smoke Pattern Recognition",
+        "YOLOv8 Object Detection",
+        "Early Warning System",
+        "High Accuracy Models",
+        "Safety Alert Integration"
       ],
-      githubUrl: "https://github.com/Winterbear0701/VerseVault.git",
-      liveUrl: "#", // Add your demo link if available
-      status: "Completed"
-    }
-    ,
-    
-    {
-      title: "FlexiEV -  AI-Driven EV Management Platform",
-      description: "Built an AI-driven EV Management Platform integrating real-time telemetry, predictive battery analytics, and an intelligent RAG-powered chatbot. Implemented GRU networks for battery RUL prediction, linear models for SoH estimation, and interactive dashboards for EV insights and performance tracking.",
-      techStack: ["Python", "Django","MongoDB", "TensorFlow","RAG", "LLMs"],
-      icon: <BoltIcon className="w-8 h-8" />,
-      gradient: "from-orange-400 to-yellow-400",
-      contribution: "Team Project",
-      role: "AI/ML Developer",
-      features: [
-        "Real-time Telemetry",
-        "Predictive Battery Analytics",
-        "RAG-powered Chatbot",
-        "GRU Networks for RUL Prediction",
-        "Linear Models for SoH Estimation",
-        "Interactive Dashboards",
-        "Admin Analytics Dashboard"
-      ],
-      githubUrl: "https://github.com/Winterbear0701/FlexiEV.git",
+      githubUrl: "https://github.com/Winterbear0701/Advanced-Fire-Smoke-Detection.git",
       liveUrl: "#", // Add your demo link if available
       status: "Completed"
     }
@@ -187,7 +188,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold text-white dark:text-white mb-4"
+              className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent mb-4"
             >
               Featured Projects
             </motion.h2>
@@ -201,7 +202,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg text-gray-300 dark:text-gray-300 mt-6 max-w-2xl mx-auto"
+              className="text-lg text-white mt-6 max-w-2xl mx-auto"
             >
               Innovative solutions that showcase my passion for AI, Machine Learning, and Full-Stack Development
             </motion.p>
@@ -240,7 +241,7 @@ const Projects = () => {
                 <div className={`${localIndex % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <motion.div
                     whileHover={{ scale: 1.02 }}
-                    className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
+                    className="bg-gray-900 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-orange-500/20"
                   >
                     {/* Project Header */}
                     <div className="flex items-center gap-4 mb-6">
@@ -248,19 +249,19 @@ const Projects = () => {
                         {project.icon}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        <h3 className="text-2xl font-bold text-white">
                           {project.title}
                         </h3>
                         <div className="flex items-center gap-2 mt-2">
                           <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                             project.contribution === 'Team Project'
-                              ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
-                              : 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300'
+                              ? 'bg-blue-500/20 text-blue-300'
+                              : 'bg-purple-500/20 text-purple-300'
                           }`}>
                             {project.contribution}
                           </span>
                           {project.role && (
-                            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-300">
+                            <span className="px-3 py-1 rounded-full text-xs font-semibold bg-orange-500/20 text-orange-300">
                               Role: {project.role}
                             </span>
                           )}
@@ -269,20 +270,20 @@ const Projects = () => {
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                    <p className="text-white mb-6 leading-relaxed">
                       {project.description}
                     </p>
 
                     {/* Tech Stack */}
                     <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3 uppercase tracking-wide">
+                      <h4 className="text-sm font-semibold text-white mb-3 uppercase tracking-wide">
                         Tech Stack
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {project.techStack.map((tech) => (
                           <span
                             key={tech}
-                            className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
+                            className="px-3 py-1 bg-blue-500/20 text-white rounded-full text-sm font-medium border border-blue-500/30"
                           >
                             {tech}
                           </span>

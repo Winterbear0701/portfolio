@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -9,7 +10,7 @@ import Publications from './components/Publications'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import MouseTrail from './components/MouseTrail'
-// import FloatingElements from './components/FloatingElements' // Removed
+import SportsPage from './pages/SportsPage'
 
 function App() {
   const [darkMode, setDarkMode] = useState(true) // Start with dark mode like the image
@@ -42,19 +43,26 @@ function App() {
       {/* Mouse Trail Effect */}
       <MouseTrail enabled={true} particleCount={12} />
       
-      {/* Floating Background Elements - Removed */}
-      {/* <FloatingElements density="medium" theme="tech" /> */}
-      
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main>
-        <Hero darkMode={darkMode} />
-        <About darkMode={darkMode} />
-        <Skills darkMode={darkMode} />
-        <Projects darkMode={darkMode} />
-        <Education darkMode={darkMode} />
-        <Publications darkMode={darkMode} />
-        <Contact darkMode={darkMode} />
-      </main>
+      
+      <Routes>
+        {/* Main Portfolio Page */}
+        <Route path="/" element={
+          <main>
+            <Hero darkMode={darkMode} />
+            <About darkMode={darkMode} />
+            <Skills darkMode={darkMode} />
+            <Projects darkMode={darkMode} />
+            <Education darkMode={darkMode} />
+            <Publications darkMode={darkMode} />
+            <Contact darkMode={darkMode} />
+          </main>
+        } />
+        
+        {/* Separate Sports Page */}
+        <Route path="/sports" element={<SportsPage darkMode={darkMode} />} />
+      </Routes>
+      
       <Footer darkMode={darkMode} />
     </div>
   )

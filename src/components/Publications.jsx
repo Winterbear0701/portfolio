@@ -49,7 +49,7 @@ const Publications = () => {
   ]
 
   return (
-    <section id="publications" className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section id="publications" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
         <motion.div
           ref={ref}
@@ -64,7 +64,7 @@ const Publications = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+              className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent mb-4"
             >
               Research & Publications
             </motion.h2>
@@ -78,7 +78,7 @@ const Publications = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto"
+              className="text-lg text-white mt-6 max-w-2xl mx-auto"
             >
               Contributing to the advancement of AI and data science through research and innovation
             </motion.p>
@@ -92,7 +92,7 @@ const Publications = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.3 + (index * 0.2) }}
-                className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300"
+                className="bg-gray-800 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-orange-500/20"
               >
                 <div className="grid lg:grid-cols-3 gap-0">
                   {/* Publication Header */}
@@ -143,16 +143,16 @@ const Publications = () => {
 
                   {/* Publication Content */}
                   <div className="lg:col-span-2 p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent mb-4">
                       {pub.title}
                     </h3>
                     
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
+                    <p className="text-white leading-relaxed mb-6">
                       {pub.description}
                     </p>
 
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                      <h4 className="text-lg font-semibold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-4">
                         Key Highlights
                       </h4>
                       <div className="grid md:grid-cols-2 gap-3">
@@ -168,7 +168,7 @@ const Publications = () => {
                             className="flex items-start gap-3"
                           >
                             <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-gray-600 dark:text-gray-300 text-sm">
+                            <span className="text-white text-sm">
                               {highlight}
                             </span>
                           </motion.div>
@@ -187,7 +187,7 @@ const Publications = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent mb-8 text-center">
               Research Interests
             </h3>
             
@@ -199,13 +199,13 @@ const Publications = () => {
                   animate={inView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.6, delay: 0.8 + (index * 0.1) }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-white dark:bg-gray-900 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-500/20"
                 >
                   <div className="text-4xl mb-4">{interest.icon}</div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  <h4 className="text-lg font-semibold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-2">
                     {interest.title}
                   </h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  <p className="text-white text-sm">
                     {interest.description}
                   </p>
                 </motion.div>
@@ -220,12 +220,12 @@ const Publications = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="mt-16 text-center"
           >
-            <div className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8">
-              <ShieldCheckIcon className="w-12 h-12 text-orange-600 dark:text-orange-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-gray-800 rounded-2xl p-8 border border-orange-500/20">
+              <ShieldCheckIcon className="w-12 h-12 text-orange-500 mx-auto mb-4" />
+              <h3 className="text-2xl font-semibold text-white mb-4">
                 Future Research Goals
               </h3>
-              <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              <p className="text-lg text-white max-w-3xl mx-auto">
                 Continuing to push the boundaries of AI and machine learning, with focus on 
                 developing solutions that address real-world challenges in information integrity, 
                 ethical AI, and human-computer interaction.

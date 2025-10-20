@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { Link, useLocation } from 'react-router-dom'
 import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline'
 
 const Navbar = ({ darkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,18 +17,26 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Education', href: '#education' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '#hero', type: 'scroll' },
+    { name: 'About', href: '#about', type: 'scroll' },
+    { name: 'Skills', href: '#skills', type: 'scroll' },
+    { name: 'Projects', href: '#projects', type: 'scroll' },
+    { name: 'Education', href: '#education', type: 'scroll' },
+    { name: 'Sports', href: '/sports', type: 'route' },
+    { name: 'Contact', href: '#contact', type: 'scroll' }
   ]
 
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+  const handleNavigation = (item) => {
+    if (item.type === 'scroll') {
+      // If we're on a different page, navigate home first
+      if (location.pathname !== '/') {
+        window.location.href = '/' + item.href
+      } else {
+        const element = document.querySelector(item.href)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
     }
     setIsOpen(false)
   }
@@ -57,14 +67,26 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <motion.button
-                key={item.name}
-                whileHover={{ y: -2 }}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-400 transition-colors duration-300 font-medium"
-              >
-                {item.name}
-              </motion.button>
+              item.type === 'route' ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="text-gray-300 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-400 transition-colors duration-300 font-medium"
+                >
+                  <motion.span whileHover={{ y: -2 }}>
+                    {item.name}
+                  </motion.span>
+                </Link>
+              ) : (
+                <motion.button
+                  key={item.name}
+                  whileHover={{ y: -2 }}
+                  onClick={() => handleNavigation(item)}
+                  className="text-gray-300 dark:text-gray-300 hover:text-orange-400 dark:hover:text-orange-400 transition-colors duration-300 font-medium"
+                >
+                  {item.name}
+                </motion.button>
+              )
             ))}
             
             {/* Dark Mode Toggle */}
@@ -81,7 +103,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => handleNavigation({ href: '#contact', type: 'scroll' })}
               className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300"
             >
               Hire Me
@@ -118,13 +140,24 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
           >
             <div className="flex flex-col space-y-3 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-lg">
               {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-left py-2 px-3 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300"
-                >
-                  {item.name}
-                </button>
+                item.type === 'route' ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-left py-2 px-3 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300"
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavigation(item)}
+                    className="text-left py-2 px-3 text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors duration-300"
+                  >
+                    {item.name}
+                  </button>
+                )
               ))}
             </div>
           </motion.div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { Link } from 'react-router-dom'
 import AnimatedBackground from './AnimatedBackground'
 
 const About = () => {
@@ -145,6 +146,28 @@ const About = () => {
                 <div className="text-sm text-gray-400 dark:text-gray-400">A1</div>
               </div>
             </div>
+          </motion.div>
+
+          {/* Sports Section Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="mt-12 text-center"
+          >
+            <Link to="/sports">
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                <span className="text-2xl">🏆</span>
+                <span>View My Sports Achievements</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

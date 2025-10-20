@@ -87,7 +87,7 @@ const Education = ({ darkMode }) => {
       duration: "1 week",
       skills: ["Hadoop", "Spark", "Linux"],
       description: "Introduction to big data technologies, distributed computing, and large-scale data processing frameworks.",
-      image: "/images/Certifications/big-data-101.png"
+      image: "/images/Certificate/Studies/big-data-101.png"
     },
 
     {
@@ -97,7 +97,7 @@ const Education = ({ darkMode }) => {
       duration: "3 months",
       skills: ["German Language", "Basic Communication", "Basic Grammar"],
       description: "Basic German language proficiency certification demonstrating fundamental communication skills.",
-      image: "/images/Certifications/Deutsch-A1.png"
+      image: "/images/Certificate/Studies/Deutsch-A1.png"
     },
 
     {
@@ -107,7 +107,7 @@ const Education = ({ darkMode }) => {
       duration: "1 week",
       skills: [ "Machine Learning", "Data Visualization"],
       description: "Foundation course covering machine learning algorithms, and data visualization techniques.",
-      image: "/images/Certifications/introduction to data science.png"
+      image: "/images/Certificate/Studies/introduction to data science.png"
     },
 
     {
@@ -117,7 +117,7 @@ const Education = ({ darkMode }) => {
       duration: "2 weeks",
       skills: ["NLP", "Transformers", "RAG","LLMs"],
       description: "Comprehensive course on Generative AI technologies and their applications in modern computing.",
-      image: "/images/Certifications/intel-genai.png"
+      image: "/images/Certificate/Studies/intel-genai.png"
     },
     
     {
@@ -127,7 +127,7 @@ const Education = ({ darkMode }) => {
       duration: "4 weeks",
       skills: ["Prompt Engineering", "LLMs", "AI Applications"],
       description: "Advanced techniques for crafting effective prompts for large language models and AI systems.",
-      image: "/images/Certifications/Prompt Engineering.png"
+      image: "/images/Certificate/Studies/Prompt Engineering.png"
     },
 
     {
@@ -137,7 +137,7 @@ const Education = ({ darkMode }) => {
       duration: "4 weeks",
       skills: ["Cloud Computing", "AI", "Computer Vision","Machine Learning","NLP"],
       description: "Internship program focused on Microsoft Azure cloud technologies and professional skill development.",
-      image: "/images/Certifications/microsoftXedunet-internship.png"
+      image: "/images/Certificate/Studies/microsoftXedunet-internship.png"
     }
   ]
 
