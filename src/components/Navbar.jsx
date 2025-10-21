@@ -22,7 +22,6 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     { name: 'Skills', href: '#skills', type: 'scroll' },
     { name: 'Projects', href: '#projects', type: 'scroll' },
     { name: 'Education', href: '#education', type: 'scroll' },
-    { name: 'Sports', href: '/sports', type: 'route' },
     { name: 'Contact', href: '#contact', type: 'scroll' }
   ]
 
