@@ -46,7 +46,6 @@ const Projects = () => {
       ],
       githubUrl: "https://github.com/Winterbear0701/FlexiEV.git",
       liveUrl: "#", // Add your demo link if available
-      status: "Completed"
     },
 
     
@@ -69,7 +68,6 @@ const Projects = () => {
       ],
       githubUrl: "https://github.com/Winterbear0701/VerseVault.git",
       liveUrl: "#", // Add your demo link if available
-      status: "Completed"
     },
 
     {
@@ -90,7 +88,6 @@ const Projects = () => {
       ],
       githubUrl: "https://github.com/Winterbear0701/MythSnare.git",
       liveUrl: "#", // Add your demo link if available
-      status: "Completed"
     },
 
     {
@@ -112,7 +109,6 @@ const Projects = () => {
       ],
       githubUrl: "https://github.com/Winterbear0701/Chiper-Chase.git",
       liveUrl: "#", // Add your demo link if available
-      status: "Completed"
     },
     {
       title: "Fire & Smoke Detection System",
@@ -132,7 +128,6 @@ const Projects = () => {
       ],
       githubUrl: "https://github.com/Winterbear0701/Advanced-Fire-Smoke-Detection.git",
       liveUrl: "#", // Add your demo link if available
-      status: "Completed"
     }
   ]
 
