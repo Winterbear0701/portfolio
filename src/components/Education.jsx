@@ -97,7 +97,7 @@ const Education = ({ darkMode }) => {
       duration: "3 months",
       skills: ["German Language", "Basic Communication", "Basic Grammar"],
       description: "Basic German language proficiency certification demonstrating fundamental communication skills.",
-      image: "/images/Certificate/Studies/Deutsch-A1.png"
+      image: "/images/Certificate/Studies/A1 - german.png"
     },
 
     {
@@ -117,7 +117,7 @@ const Education = ({ darkMode }) => {
       duration: "2 weeks",
       skills: ["NLP", "Transformers", "RAG","LLMs"],
       description: "Comprehensive course on Generative AI technologies and their applications in modern computing.",
-      image: "/images/Certificate/Studies/intel-genai.png"
+      image: "/images/Certificate/Studies/intel-genai-completion.png"
     },
     
     {
@@ -127,7 +127,7 @@ const Education = ({ darkMode }) => {
       duration: "4 weeks",
       skills: ["Prompt Engineering", "LLMs", "AI Applications"],
       description: "Advanced techniques for crafting effective prompts for large language models and AI systems.",
-      image: "/images/Certificate/Studies/Prompt Engineering.png"
+      image: "/images/Certificate/Studies/Prompt Engineering for GenAI Training.png"
     },
 
     {
@@ -137,7 +137,7 @@ const Education = ({ darkMode }) => {
       duration: "4 weeks",
       skills: ["Cloud Computing", "AI", "Computer Vision","Machine Learning","NLP"],
       description: "Internship program focused on Microsoft Azure cloud technologies and professional skill development.",
-      image: "/images/Certificate/Studies/microsoftXedunet-internship.png"
+      image: "images/Certificate/Studies/edunet-microsoft-internship.png"
     }
   ]
 

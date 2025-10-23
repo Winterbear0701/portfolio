@@ -75,7 +75,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl text-orange-300 dark:text-orange-200 mb-8 font-light"
           >
-            B.Tech in Artificial Intelligence & Data Science Student
+            Aspiring AI/ML Engineer
           </motion.p>
 
           {/* Brief Description */}
@@ -85,7 +85,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg text-gray-300 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Passionate about AI, Machine Learning, and Data Science. Building innovative solutions that make a difference.
+            Developing innovative Machine Learning and GenAI solutions to transform data and solve complex, real-world problems.
           </motion.p>
 
           {/* CTA Buttons */}

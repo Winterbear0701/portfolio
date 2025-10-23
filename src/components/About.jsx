@@ -62,35 +62,6 @@ const About = () => {
               </p>
 
               {/* Key Stats */}
-              <div className="grid grid-cols-3 gap-6">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  className="text-center"
-                >
-                  <div className="text-3xl font-bold text-orange-400 dark:text-orange-300 mb-2">8.6</div>
-                  <div className="text-sm text-gray-400 dark:text-gray-400">CGPA</div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="text-center"
-                >
-                  <div className="text-3xl font-bold text-orange-400 dark:text-orange-300 mb-2">5+</div>
-                  <div className="text-sm text-gray-400 dark:text-gray-400">Projects</div>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={inView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.7 }}
-                  className="text-center"
-                >
-                  <div className="text-3xl font-bold text-orange-400 dark:text-orange-300 mb-2">7+</div>
-                  <div className="text-sm text-gray-400 dark:text-gray-400">Certifications</div>
-                </motion.div>
-              </div>
             </motion.div>
 
             {/* Visual Element */}
@@ -105,16 +76,20 @@ const About = () => {
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>Data Science</span>
+                    <span>GenAI</span>
                   </li>
+
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                     <span>Machine Learning</span>
                   </li>
+                  
                   <li className="flex items-center gap-3">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span>GenAI</span>
+                    <span>Data Science</span>
                   </li>
+                  
+                  
                 </ul>
               </div>
               
