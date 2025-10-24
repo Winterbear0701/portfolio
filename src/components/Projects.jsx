@@ -244,7 +244,7 @@ const Projects = () => {
                         {project.icon}
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-2xl font-bold text-white">
+                        <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent">
                           {project.title}
                         </h3>
                         <div className="flex items-center gap-2 mt-2">

@@ -222,7 +222,7 @@ const Publications = () => {
           >
             <div className="bg-gray-800 rounded-2xl p-8 border border-orange-500/20">
               <ShieldCheckIcon className="w-12 h-12 text-orange-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-white mb-4">
+              <h3 className="text-2xl font-semibold bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent mb-4">
                 Future Research Goals
               </h3>
               <p className="text-lg text-white max-w-3xl mx-auto">

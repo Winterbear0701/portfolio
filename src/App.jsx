@@ -34,16 +34,12 @@ function App() {
     }
   }, [darkMode])
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
-
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
       {/* Mouse Trail Effect */}
       <MouseTrail enabled={true} particleCount={12} />
       
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Navbar />
       
       <Routes>
         {/* Main Portfolio Page */}

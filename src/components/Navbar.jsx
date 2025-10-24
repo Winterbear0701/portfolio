@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link, useLocation } from 'react-router-dom'
-import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
-const Navbar = ({ darkMode, toggleDarkMode }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
@@ -21,8 +21,7 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
     { name: 'About', href: '#about', type: 'scroll' },
     { name: 'Skills', href: '#skills', type: 'scroll' },
     { name: 'Projects', href: '#projects', type: 'scroll' },
-    { name: 'Education', href: '#education', type: 'scroll' },
-    { name: 'Contact', href: '#contact', type: 'scroll' }
+    { name: 'Education', href: '#education', type: 'scroll' }
   ]
 
   const handleNavigation = (item) => {
@@ -87,16 +86,6 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
                 </motion.button>
               )
             ))}
-            
-            {/* Dark Mode Toggle */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full bg-gray-800 dark:bg-gray-700 text-gray-300 dark:text-gray-300 hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-300"
-            >
-              {darkMode ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
-            </motion.button>
 
             {/* Hire Me Button */}
             <motion.button
@@ -105,24 +94,15 @@ const Navbar = ({ darkMode, toggleDarkMode }) => {
               onClick={() => handleNavigation({ href: '#contact', type: 'scroll' })}
               className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300"
             >
-              Hire Me
+              Connect
             </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300"
-            >
-              {darkMode ? <SunIcon className="w-5 h-5" /> : <MoonIcon className="w-5 h-5" />}
-            </motion.button>
-            
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+              className="p-2 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors duration-300"
             >
               {isOpen ? <XMarkIcon className="w-6 h-6" /> : <Bars3Icon className="w-6 h-6" />}
             </button>
